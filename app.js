@@ -98,3 +98,45 @@ if(document.getElementById("taskList")){
   });
  });
 }
+// ================= INVENTORY SYSTEM =================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const addBtn = document.getElementById("addItemBtn");
+  const itemName = document.getElementById("itemName");
+  const itemQty = document.getElementById("itemQty");
+  const list = document.getElementById("inventoryList");
+
+  if (!addBtn) return; // prevents errors if not on dashboard
+
+  const inventoryRef = db.ref("inventory");
+
+  // Add item
+  addBtn.onclick = () => {
+    if (!itemName.value || !itemQty.value) {
+      alert("Please enter item and quantity");
+      return;
+    }
+
+    inventoryRef.push({
+      name: itemName.value,
+      qty: itemQty.value
+    });
+
+    itemName.value = "";
+    itemQty.value = "";
+  };
+
+  // Display items
+  inventoryRef.on("value", snapshot => {
+    list.innerHTML = "";
+
+    snapshot.forEach(child => {
+      const data = child.val();
+      const li = document.createElement("li");
+      li.textContent = `${data.name} (${data.qty})`;
+      list.appendChild(li);
+    });
+  });
+
+});
