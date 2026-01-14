@@ -1,3 +1,16 @@
+console.log("APP JS LOADED");
+
+document.addEventListener("DOMContentLoaded", () => {
+  const testBtn = document.getElementById("addItemBtn");
+
+  if (testBtn) {
+    testBtn.addEventListener("click", () => {
+      alert("BUTTON IS WORKING!");
+    });
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
   const loginBtn = document.getElementById("loginBtn");
