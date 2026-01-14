@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard | ToolsTopia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <h1>Dashboard</h1>
+  <nav>
+    <a href="inventory.html" class="btn outline">Inventory</a>
+    <a href="borrow.html" class="btn outline">Borrow</a>
+    <a href="tasks.html" class="btn outline">Tasks</a>
+    <a href="learning.html" class="btn outline">Learning</a>
+    <button onclick="logout()" class="btn">Logout</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2 id="welcomeUser">Welcome!</h2>
+  <p>Your smart school resource dashboard.</p>
+</section>
+
+<div class="features">
+  <div class="card">📦 Inventory Manager</div>
+  <div class="card">🔄 Borrow Tracking</div>
+  <div class="card">✅ Task System</div>
+  <div class="card">📚 Learning Hub</div>
+</div>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
