@@ -1,29 +1,45 @@
-// AUTH
-const loginBtn = document.getElementById("loginBtn");
-const signupBtn = document.getElementById("signupBtn");
-const authMsg = document.getElementById("authMsg");
+document.addEventListener("DOMContentLoaded", () => {
 
-if(loginBtn){
- loginBtn.onclick = () => {
-  auth.signInWithEmailAndPassword(
-    email.value, password.value
-  ).then(()=>location="dashboard.html")
-  .catch(e=>authMsg.textContent=e.message);
- };
-}
+  const loginBtn = document.getElementById("loginBtn");
+  const signupBtn = document.getElementById("signupBtn");
+  const authMsg = document.getElementById("authMsg");
 
-if(signupBtn){
- signupBtn.onclick = () => {
-  auth.createUserWithEmailAndPassword(
-    email.value, password.value
-  ).then(()=>location="dashboard.html")
-  .catch(e=>authMsg.textContent=e.message);
- };
-}
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
 
-function logout(){
- auth.signOut().then(()=>location="login.html");
-}
+  if (loginBtn) {
+    loginBtn.onclick = () => {
+      if (!window.auth) {
+        alert("Firebase not ready yet. Refresh page.");
+        return;
+      }
+
+      auth.signInWithEmailAndPassword(
+        email.value,
+        password.value
+      )
+      .then(() => window.location = "dashboard.html")
+      .catch(err => authMsg.textContent = err.message);
+    };
+  }
+
+  if (signupBtn) {
+    signupBtn.onclick = () => {
+      if (!window.auth) {
+        alert("Firebase not ready yet. Refresh page.");
+        return;
+      }
+
+      auth.createUserWithEmailAndPassword(
+        email.value,
+        password.value
+      )
+      .then(() => window.location = "dashboard.html")
+      .catch(err => authMsg.textContent = err.message);
+    };
+  }
+
+});
 
 // INVENTORY
 function addItem(){
