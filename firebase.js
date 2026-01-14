@@ -14,15 +14,15 @@ document.head.appendChild(firebaseDbScript);
 firebaseDbScript.onload = () => {
 
   const firebaseConfig = {
-    apiKey: "PASTE_YOUR_KEY",
-    authDomain: "PASTE_YOUR_DOMAIN",
-    databaseURL: "PASTE_YOUR_DB",
-    projectId: "PASTE_YOUR_PROJECT",
-    storageBucket: "PASTE_YOUR_BUCKET",
-    messagingSenderId: "PASTE_YOUR_SENDER",
-    appId: "PASTE_YOUR_APPID"
-  };
-
+  apiKey: "AIzaSyDu_99pNy0ZSegAEPtuD5u3TjyrNzcjKEE",
+  authDomain: "toolstopia.firebaseapp.com",
+  databaseURL: "https://toolstopia-default-rtdb.firebaseio.com",
+  projectId: "toolstopia",
+  storageBucket: "toolstopia.firebasestorage.app",
+  messagingSenderId: "922783777380",
+  appId: "1:922783777380:web:46ca4a719181a0fb83d571",
+  measurementId: "G-BHH5WBXY5M"
+};
   firebase.initializeApp(firebaseConfig);
   window.auth = firebase.auth();
   window.db = firebase.database();
