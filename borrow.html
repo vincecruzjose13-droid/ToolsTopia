@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Borrow | ToolsTopia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <h1>Borrow System</h1>
+  <a href="dashboard.html" class="btn outline">Back</a>
+</header>
+
+<section class="hero">
+  <input id="borrowItem" placeholder="Item Name">
+  <input id="borrowName" placeholder="Borrower Name">
+  <button onclick="addBorrow()" class="btn full">Add Record</button>
+</section>
+
+<div id="borrowList" class="features"></div>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
